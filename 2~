@@ -3,12 +3,9 @@ int main ()
 {
 	int day;
 	int month;
-	int a;
 	day = 23;
 	month = 07;
-	a = day;
-	day = month;
-	month = a;
-	printf ("%d; %d\n", day, month);
+	printf ("%d/", day);
+	printf("%d\n", month);
 	return 0;
 }

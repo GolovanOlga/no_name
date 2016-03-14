@@ -9,6 +9,7 @@ int main ()
 	a = day;
 	day = month;
 	month = a;
-	printf ("%d; %d\n", day, month);
+	printf ("%d\n", day);
+	printf("%d\n", month);
 	return 0;
 }
