@@ -1,1 +1,23 @@
-
+#include <stdio.h>
+int main ()
+{
+	const float pi=3.14, g=9.8;
+	float a, factorial=1;
+	int i=1, b=1; /*b переменная, с помощью которой определяется знак слагаемого*/
+	scanf ("%f", &a);
+    a=a*pi/180;
+    float sina=0;
+    while (a/factorial>=0.000001)
+    {
+    	sina=sina+b*a/factorial;
+    	b=b*(-1);
+    	a=a*a*a;
+    	i=i+2;
+    	factorial=factorial*i*(i-1);
+    }
+    float v,t;
+    scanf ("%f", &v);
+    t=2*v*sina/g;
+    printf("%f\n", t);
+    return 0;
+}

@@ -1,10 +1,32 @@
 #include <stdio.h>
 int main ()
 {
-	int day;
-	int month;
-	day = 23;
-	month = 07;
-	printf ("%d; %d\n/", day, month);
-	return 0;
+	int i = 32, a=0;
+	char symbol;
+    printf("|0  | NUL |1  | SON |2  | STX |3  | ETX |4  | EOT |5  | ENQ |6  | ACK |7  | BEL \n");
+    printf("|8  | BS  |9  | TAB |10 | LF  |11 | VT  |12 | FF  |13 | CR  |14 | SO  |15 | SI  \n");
+    printf("|16 | DLE |17 | DC1 |18 | DC2 |19 | DC3 |20 | DC4 |21 | NAK |22 | SYN |23 | ETB \n");
+    printf("|24 | CAN |25 | EM  |26 | SUB |27 | ESC |28 | FS  |29 | GS  |30 | RS  |31 | US  \n");
+    while (i<100) {
+    	symbol = i;
+    	printf("|%d | %c   ", symbol, symbol);
+        a++;
+    	if (a%8==0)
+    	{
+    		printf("\n");
+    	}
+    	i++;
+    }
+    while (i<127) {
+        symbol = i;
+        printf("|%d| %c   ", symbol, symbol);
+        a++;
+        if (a%8==0)
+        {
+            printf("\n");
+        }
+        i++;
+    }
+    printf("|127| DEL \n");
+    return 0;
 }

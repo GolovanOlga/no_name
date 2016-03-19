@@ -1,12 +1,8 @@
-000000000040052d <main>:
-  40052d:	55                   	push   %rbp
-  40052e:	48 89 e5             	mov    %rsp,%rbp
-  400531:	bf d4 05 40 00       	mov    $0x4005d4,%edi
-  400536:	e8 d5 fe ff ff       	callq  400410 <puts@plt>
-  40053b:	b8 00 00 00 00       	mov    $0x0,%eax
-  400540:	5d                   	pop    %rbp
-  400541:	c3                   	retq   
-  400542:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
-  400549:	00 00 00 
-  40054c:	0f 1f 40 00          	nopl   0x0(%rax)
-
+#include <stdio.h>
+int main ()
+{
+	int a, b;
+    scanf ("%d %d", &a, &b);
+    printf("%d %d %d %.2f\n", a+b, a-b, a*b, (float)a/b );
+    return 0;
+}

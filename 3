@@ -1,14 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 int main ()
 {
-	int day;
-	int month;
-	int a;
-	day = 23;
-	month = 07;
-	a = day;
-	day = month;
-	month = a;
-	printf ("%d; %d\n", day, month);
-	return 0;
+char str[40];
+fgets(str, 40, stdin);
+int n;
+n = strlen(str);
+printf("%d\n", n-1 );
+return 0;
 }
