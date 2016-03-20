@@ -1,0 +1,6 @@
+#include <stdio.h>
+int main ()
+{
+	printf("char: %zd; int: %zd; float: %zd; double %zd\n", sizeof(char), sizeof(int), sizeof(float), sizeof(double));
+	return 0;
+}

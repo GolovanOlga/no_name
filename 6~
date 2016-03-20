@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main ()
+{
+	int a, n=1;
+	scanf ("%d", &a);
+	while (a>0) {
+		n=n*a;
+		a--;
+	}
+	printf("%d\n", n);
+	return 0;
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main ()
+{
+	int n;
+	scanf ("%d", &n);
+	int year;
+	int month;
+	int day;
+	year = n/365;
+	month = (n-year*356)/31;
+	day = n-(year*365+month*31);
+	printf("year: %d\n", year);
+    printf("month: %d\n", month);
+    printf("day: %d\n", day);
+    return 0;
+}

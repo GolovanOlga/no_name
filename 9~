@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main ()
+{
+	int a, b, c;
+	scanf ("%d", &a);
+	float sum=0.0f, n=0.0f;
+    b=a/10;
+    c=a%10;
+	while (b!=0 || c!=0) {
+		sum=a%10+sum;
+		n++;
+		a=b;
+		b=a/10;
+		c=a%10;
+	}
+	float s;
+	s=sum/n;
+	printf("%.0f %.0f %.2f\n", n, sum, s);
+	return 0;
+}
