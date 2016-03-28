@@ -1,1 +1,51 @@
-
+#include <stdio.h>
+int main ()
+{
+	int n, m, k=0;
+	scanf ("%d", &n);
+	long int G(int n){
+    long int e[1000];
+    long int i, j, p, a, b, l;
+    p=n;
+    for(i = 1; i <= n-1 ; i++) e[i] =0;
+    e[0] = 1;
+    for(j = 1 ; j <= n-1; j++)
+    for(i = j; i >= 1 ; i--)
+    e[i] = e[i-1] + e[i];
+    for(i = 0; i <= n-1 ; i++){
+	    a=e[i];
+        b=a/10;
+        l=a%10;
+	    while (b!=0 || l!=0) {
+		    p++;
+		    a=b;
+		    b=a/10;
+		    l=a%10;
+	    }
+    }
+    p--;
+    return p;
+    }
+	long int F(int n){
+		long int b=1, c=1;
+	    while (b<=n) {
+		c=c*b;
+		b++;}
+		return c;
+	}
+	while (k<n) {
+		m=0;
+		while (m<(G(n)-G(k+1))/2) {
+			printf(" ");
+			m++;
+        }
+		m=0;
+		while (m<=k) {
+			printf("%ld ", F(k)/(F(m)*F(k-m)));
+			m++;
+		}
+		printf("\n");
+		k++; 
+	}
+	return 0;
+}

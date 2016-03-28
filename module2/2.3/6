@@ -1,1 +1,26 @@
-
+#include <stdio.h>
+int main ()
+{
+	char p[21];
+	int i=0, j, percent;
+	scanf ("%d", &percent);
+	p[i]='[';
+	i++;
+	if (percent%5>=3) {
+		j=percent/5+1;
+	}
+	else {
+		j=percent/5;
+	}
+	while (i<j+1) {
+		p[i]='=';
+		i++;
+	}
+	while (i<21) {
+		p[i]=' ';
+		i++;
+	}
+	p[i]=']';
+	printf("%s\n", p);
+	return 0;
+}

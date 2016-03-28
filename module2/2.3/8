@@ -1,1 +1,58 @@
-
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+	char str[2], s, sum=48;
+    scanf ("%s", str);
+    int n, k;
+    if (str[1]==43) {
+    	s=str[0]-48;
+    	sum=str[2]-48;
+    	n=(int)s;
+    	k=(int)sum;
+    	k=n+k;
+        printf("%d\n", k);
+    }
+    if (str[1]==45) {
+        s=str[0]-48;
+    	sum=str[2]-48;
+    	n=(int)s;
+    	k=(int)sum;
+    	k=n-k;
+        printf("%d\n", k);
+    }
+    if (str[1]==42) {
+        s=str[0]-48;
+    	sum=str[2]-48;
+    	n=(int)s;
+    	k=(int)sum;
+    	k=n*k;
+        printf("%d\n", k);
+    }
+    if (str[1]==47) {
+        s=str[0]-48;
+    	sum=str[2]-48;
+    	n=(int)s;
+    	k=(int)sum;
+    	k=n/k;
+        printf("%d\n", k);
+    }
+    if (str[1]==37) {
+        s=str[0]-48;
+    	sum=str[2]-48;
+    	n=(int)s;
+    	k=(int)sum;
+    	k=n%k;
+        printf("%d\n", k);
+    }
+    if (str[1]==94) {
+        s=str[0]-48;
+    	sum=str[2]-48;
+    	n=(int)s;
+    	k=(int)sum;
+    	k=pow(n,k);
+        printf("%d\n", k);
+    }
+    
+      	return 0;
+}
