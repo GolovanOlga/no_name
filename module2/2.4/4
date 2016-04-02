@@ -1,1 +1,18 @@
-
+#include <stdio.h>
+#define MAX(x, y) (max=((x)>(y)) ? (x) : (y))
+int main ()
+{
+	int  n, x, y, max;
+	scanf ("%d", &n);
+    int z=5, a=7, b=2, c=9;
+    while (n*2>0) {
+    	x=z;
+    	z=(a*z+b)%c;
+    	y=z;
+    	z=(a*z+b)%c;
+    	MAX (x, y);
+    	printf("%d %d | %d\n",x, y, max );
+    	n--;
+    }
+    return 0;
+}
