@@ -33,7 +33,6 @@ int main ()
         printf("%d\n", k);
     }
     if (str[1]==47) {
-        assert (str[2]!=48);
         s=str[0]-48;
     	sum=str[2]-48;
     	n=(int)s;
@@ -42,7 +41,6 @@ int main ()
         printf("%d\n", k);
     }
     if (str[1]==37) {
-        assert (str[2]!=48);
         s=str[0]-48;
     	sum=str[2]-48;
     	n=(int)s;
@@ -60,4 +58,4 @@ int main ()
     }
     
       	return 0;
-}  
+}
