@@ -1,1 +1,138 @@
-
+#include <stdio.h>
+void F (int n);
+int main ()
+{
+	int n;
+	scanf ("%d", &n);
+	char A[n];
+	scanf ("%s", A);
+	void F (int n) {
+		int B[n], C[n];
+		int i=0, k1=0, k2=0, m1=0, m2=0, m3=0, j=0;
+		while (i<n) {
+			if (A[i]==40) {
+				k1++;
+				B[j]=i;
+				j++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==60) {
+				k1++;
+				B[j]=i;
+				j++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==91) {
+				k1++;
+				B[j]=i;
+				j++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==123) {
+				k1++;
+				B[j]=i;
+				j++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		j=0;
+		while (i<n) {
+			if (A[i]==41) {
+				k2++;
+				C[j]=i;
+				j++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==62) {
+				k2++;
+				C[j]=i;
+				j++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==93) {
+				k2++;
+				C[j]=i;
+				j++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==125) {
+				k2++;
+				C[j]=i;
+				j++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==34) {
+				m1++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==39) {
+				m2++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		while (i<n) {
+			if (A[i]==96) {
+				m3++;
+				i++;
+			}
+			else {i++;}
+		}
+		i=0;
+		if (k1-k2==0 && m1%2==0 && m2%2==0 && m3%2==0) {
+			k2=0;
+			while (i<k1) {
+				if (B[i]<C[i]) {
+					k2++;
+					i++;
+				}
+				else {i++;}
+			}
+			if (k1==k2) {
+			    printf("Баланс скобок и кавычек в строке соблюдается.\n");}
+			else {
+				printf("Баланс скобок и кавычек в строке не соблюдается.\n");
+			}
+		} 
+		else {
+			printf("Баланс скобок и кавычек в строке не соблюдается.\n");
+		}
+	}
+	F (n);
+	return 0;
+}

@@ -1,1 +1,97 @@
+#include <stdio.h>
+#include <assert.h>
+float detA (int n, float A[n][n]);
+float det_A (int k, int n, float A[n][n], float B[n]);
+int main () {
+	int n, i=0, j=0, detA_count=0, det_A_count=0;
+	float D, d;
+	scanf ("%d", &n);
+	float A[n][n], B[n], X[n];
+	float detA (int n, float A[n][n]) {
+		float A1[n-1][n-1];
+		int i=1, j=0, k=0, m;
+		float det=0;
+		if (n==1){
+			detA_count++;
+			return A[0][0];
+		}
+		else {
+			while (k<n) {
+				while (i<n) {
+					m=0;
+					while (j<n) {
+						if (j!=k) {
+							A1[i-1][m]=A[i][j];
+							m++;
+						}
+						j++;
+					}
+					j=0;
+					i++;
+				}
+				if (k%2==0) {
+					det=det+A[0][k]*detA(n-1, A1);
+				}
+				else {
+					det=det-A[0][k]*detA(n-1, A1);
+				}
+				k++;
+				j=0;
+				i=1;
+			}
+			detA_count++;
+			return det;
+		}
+	}
+	float det_A (int k, int n, float A[n][n], float B[n]) {
+		int i=0, j=0;
+		float A1[n][n];
+		float det_;
+		while (i<n) {
+			while (j<n) {
+				A1[i][j]=A[i][j];
+				j++;
+			}
+			j=0;
+			i++;
+		}
+		i=0;
+		while (i<n) {
+			A1[i][k]=B[i];
+			i++;
+		}
+		det_=detA(n, A1);
+		det_A_count++;
+		return det_;
+	}
+	while (i<n) {
+		while (j<n) {
+			scanf ("%f", &A[i][j]);
+			j++;
+		}
+		j=0;
+		i++;
+	}
+	i=0;
+	j=0;
+	while (i<n) {
+		scanf ("%f", &B[i]);
+		i++;
+	}
+	i=0;
+	D=detA (/*detA_count,*/ n, A);
+	assert (D!=0);
+	while (i<n) {
+		d=det_A(/*detA_count, det_A_count,*/ i, n, A, B);
+		X[i]=d/D;
+		i++;
+	}
+	i=0;
+	while (i<n) {
+		printf("x%d=%.2f\n", i+1, X[i]);
+		printf("detA_count: %d, det_A_count: %d\n", detA_count, det_A_count);
 
+		i++;
+	}
+	return 0;
+}

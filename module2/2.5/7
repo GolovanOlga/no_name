@@ -1,1 +1,35 @@
-
+#include <stdio.h>
+#include <stdlib.h>
+const float e=2.71828; 
+int main () 
+{
+	float A[100];
+	float first_group, a=0;
+	int i=0, j=0, k;
+	while (i<100) {
+		scanf ("%f", &A[i]);
+		i++;
+	}
+	i=0;
+	first_group=100/e;
+	k=(int)first_group;
+	while (i<k) {
+		j=i+rand()%(100-k);
+		if (a<A[j]) {
+			a=A[j];
+			i++;
+		}
+		else {i++;}
+	}
+	i=0;
+	while (i<100) {
+		if (A[i]>a) {
+			printf("Жених с номером %d и оценкой %f\n", i, A[i]);
+			break;
+		}
+		else {i++;}
+	}
+	if (i==100)
+		printf("Больше женихов не осталось\n");
+	return 0;
+}

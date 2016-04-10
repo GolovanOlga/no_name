@@ -1,1 +1,46 @@
-
+#include <stdio.h>
+void F (int n);
+int main ()
+{ 
+	int n;
+	scanf ("%d", &n);
+	void F (int n) {
+		char A[n];
+	    scanf ("%s", A);
+		int i=0, k=0, j=0;
+		char m=33;
+		char C[94];
+		int B[94];
+		while (m<127 && j<94) {
+			while (i<n) {
+				if (A[i]==m) {
+					k++;
+					i++;
+				}
+				else {i++;}
+			}
+			B[j]=k;
+			C[j]=m;
+			i=0;
+			k=0;
+			j++;
+			m++;
+		}
+		j=1;
+		i=0;
+		while (j<=n) {
+			while (i<94) {
+				if (B[i]==j) {
+					printf("%c ", C[i]);
+					i++;
+				}
+				else {i++;}
+			}
+			i=0;
+			j++;
+		}
+	}
+	F (n);
+	printf("\n");
+	return 0;
+}

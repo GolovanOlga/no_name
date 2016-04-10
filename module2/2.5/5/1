@@ -1,1 +1,60 @@
+#include <stdio.h>
+#include <assert.h>
+float detA (int n, float A[n][n]);
+float det_A (int k, int n, float A[n][n], float B[n]);
+float detA (int n, float A[n][n]) {
+		float A1[n-1][n-1];
+		int i=1, j=0, k=0, m;
+		float det=0;
+		
+		if (n==1)
+			return A[0][0];
+		else {
 
+			
+			while (k<n) {
+				while (i<n) {
+					m=0;
+					while (j<n) {
+						if (j!=k) {
+							A1[i-1][m]=A[i][j];
+							m++;
+						}
+						j++;
+					}
+					j=0;
+					i++;
+				}
+				if (k%2==0) {
+					det=det+A[0][k]*detA(n-1, A1);
+				}
+				else {
+					det=det-A[0][k]*detA(n-1, A1);
+				}
+				k++;
+				j=0;
+				i=1;
+			}
+			return det;
+		}
+	}
+float det_A (int k, int n, float A[n][n], float B[n]) {
+		int i=0, j=0;
+		float A1[n][n];
+		float det_;
+		while (i<n) {
+			while (j<n) {
+				A1[i][j]=A[i][j];
+				j++;
+			}
+			j=0;
+			i++;
+		}
+		i=0;
+		while (i<n) {
+			A1[i][k]=B[i];
+			i++;
+		}
+		det_=detA(n, A1);
+		return det_;
+	}
